@@ -1,0 +1,67 @@
+import { INodeTypeDescription } from 'n8n-workflow';
+
+export const maxBotTriggerDescription: INodeTypeDescription = {
+  displayName: 'MAX Bot Trigger',
+  name: 'maxBotTrigger',
+  icon: 'file:max.svg',
+  group: ['trigger'],
+  version: 1,
+  description: 'Receive events from MAX Bot via webhook',
+  defaults: { name: 'MAX Bot Trigger' },
+  inputs: [],
+  outputs: ['main'],
+  credentials: [{ name: 'maxBotApi', required: true }],
+  webhooks: [
+    {
+      name: 'default',
+      httpMethod: 'POST',
+      responseMode: 'onReceived',
+      path: 'webhook',
+      restartWebhook: true,
+    },
+  ],
+  properties: [
+    {
+      displayName: 'Events',
+      name: 'events',
+      type: 'multiOptions',
+      required: true,
+      default: ['message_created'],
+      description: 'Events to subscribe to',
+      options: [
+        { name: 'Message Created', value: 'message_created' },
+        { name: 'Message Callback', value: 'message_callback' },
+        { name: 'Message Edited', value: 'message_edited' },
+        { name: 'Message Removed', value: 'message_removed' },
+        { name: 'Bot Started', value: 'bot_started' },
+        { name: 'Bot Added', value: 'bot_added' },
+        { name: 'Bot Removed', value: 'bot_removed' },
+        { name: 'User Added', value: 'user_added' },
+        { name: 'User Removed', value: 'user_removed' },
+        { name: 'Chat Title Changed', value: 'chat_title_changed' },
+        { name: 'Message Construction Request', value: 'message_construction_request' },
+        { name: 'Message Constructed', value: 'message_constructed' },
+        { name: 'Message Chat Created', value: 'message_chat_created' },
+      ],
+    },
+    {
+      displayName: 'Secret',
+      name: 'secret',
+      type: 'string',
+      typeOptions: { password: true },
+      default: '',
+      required: false,
+      description: 'Secret for verifying X-Max-Bot-Api-Secret header',
+    },
+    {
+      displayName: 'Environment',
+      name: 'environment',
+      type: 'options',
+      options: [
+        { name: 'Production', value: 'production' },
+        { name: 'Development', value: 'development', description: 'For tunnel testing (serveo/bore/ngrok)' },
+      ],
+      default: 'production',
+    },
+  ],
+};

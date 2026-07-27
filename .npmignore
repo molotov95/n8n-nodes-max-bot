@@ -1,0 +1,10 @@
+src/
+test/
+docker/
+.github/
+tsconfig.json
+.eslintrc.js
+gulpfile.js
+node_modules/
+*.ts
+!*.d.ts
