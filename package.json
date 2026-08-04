@@ -1,5 +1,5 @@
 {
-  "name": "@molotov95/n8n-nodes-max-bot",
+  "name": "n8n-nodes-max-bot",
   "version": "0.1.1",
   "description": "n8n node for MAX Bot API — send messages, manage chats, receive webhooks",
   "keywords": [
