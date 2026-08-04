@@ -1,6 +1,6 @@
 {
-  "name": "n8n-nodes-max-bot",
-  "version": "0.1.0",
+  "name": "@molotov95/n8n-nodes-max-bot",
+  "version": "0.1.1",
   "description": "n8n node for MAX Bot API — send messages, manage chats, receive webhooks",
   "keywords": [
     "n8n-community-node-package",
@@ -10,14 +10,14 @@
     "n8n"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/max-messenger/max-bot-api-client-ts",
+  "homepage": "https://github.com/molotov95/n8n-nodes-max-bot",
   "author": {
     "name": "MAX Messenger",
     "email": ""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/max-messenger/max-bot-api-client-ts.git",
+    "url": "https://github.com/molotov95/n8n-nodes-max-bot.git",
     "directory": "n8n-nodes-max-bot"
   },
   "main": "dist/index.js",
